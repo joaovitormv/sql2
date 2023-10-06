@@ -31,3 +31,5 @@ export default class User extends BaseModel {
     }
   }
 }
+
+/* Define os campos do usuário; o método hashpasswrod 'censura' a senha*/
