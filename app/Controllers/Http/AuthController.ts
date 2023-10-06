@@ -13,7 +13,7 @@ export default class AuthController {
     public async login({request, auth, response}: HttpContextContract){
         try{
             const { email, password } = request.all()
-            const token = await auth.use('api').attempt(email, password, { /*Usa o sistema de autenticação api, tenta autenticar o usuário com base no email e password recebidos; se der certo, ele gera um token.
+            const token = await auth.use('api').attempt(email, password, { /*Usa o sistema de autenticação api, tenta autenticar o usuário com base no email e password recebidos; se der certo, ele gera um token.*/
                 expiresIn: '1day'
             })
             const user = await User.findByOrFail("email", email) /*Verifica no banco de dados se esse email existe*/
